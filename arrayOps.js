@@ -1,26 +1,24 @@
-// array ops
-let marks = [55, 82, 91, 45, 98, 63];
+// foreach, map
 
-// let max = marks[0];
+// foreach
+let fruits = ["Apple", "Banana", "Mango", "jackfruit"];
 
-// for (let i = 1; i < marks.length; i++) {
-//   if (max < marks[i]) {
-//     max = marks[i];
-//   }
-// }
-// console.log(max);
+// let newFruits = fruits.forEach((f, idx) => {
+//   console.log(`${idx + 1} -> ${f}`);
+//   //   return `${idx + 1} -> ${f}`; foreach can't return
+// });
+// console.log(newFruits);
 
-// let sum = 0;
-// for (let mark of marks) {
-//   sum += mark;
-// }
+// let newFruits2 = fruits.map((f, idx) => {
+//   // console.log(`${idx + 1} -> ${f}`);
+//   return `${idx + 1} -> ${f}`;
+// });
+// console.log(newFruits);
 
-// console.log(sum);
-// console.log(sum / marks.length);
+// let newFruits2 = fruits.map((f) => f.toLowerCase());
 
-// [55, 82, 91, 45, 98, 63];
-let reMarks = [];
-for (let i = marks.length - 1; i >= 0; i--) {
-  reMarks.push(marks[i]);
-}
-console.log(reMarks);
+// console.log(newFruits2, "\n", fruits);
+
+let customFruits = fruits.filter((f) => f.length > 5);
+
+console.log(customFruits);
