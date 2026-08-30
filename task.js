@@ -14,8 +14,10 @@ let topSciFi = movies
   ?.map((m) => `${m.title},(${m.rating})`)
   ?.forEach((m) => console.log(`Dekhbo ki dekhbo na ${m})`));
 
+
+
 // task
-/*
+
 let products = [
   { id: 1, title: "Mouse", price: 500, category: "Accessories", inStock: true },
   { id: 2, title: "Keyboard", price: 1200, category: "Accessories", inStock: false },
@@ -23,5 +25,26 @@ let products = [
   { id: 4, title: "Laptop", price: 55000, category: "Computer", inStock: true },
   { id: 5, title: "Headphone", price: 1500, category: "Accessories", inStock: true }
 ];
-শুধু In-Stock Product, Price অনুযায়ী কম থেকে বেশি সাজানো, শুধু Title+Price বের করা, টোটাল কত টাকা লাগবে স্টক আউট করতে চাইলে সেটা ক্যালকুলেট করুন।
-*/
+// শুধু In-Stock Product, Price অনুযায়ী কম থেকে বেশি সাজানো, শুধু Title+Price বের করা, টোটাল কত টাকা লাগবে স্টক আউট করতে চাইলে সেটা ক্যালকুলেট করুন।
+
+// filter() → কোনগুলো in stock
+// sort() → price কম থেকে বেশি
+// map() → শুধু title + price
+// reduce() → সব price যোগ করে total
+
+let inStockProduct = products.filter(product=> product.inStock);
+
+let sortedProduct = inStockProduct.sort((a, b)=> a.price - b.price);
+
+let result = sortedProduct.map(product => ({
+  title: product.title,
+  price: product.price,
+}));
+
+console.log(result);
+
+let totalPrice = inStockProduct.reduce((total, product) => {
+  return total + product.price;
+}, 0);
+console.log("Total Price:", totalPrice);
+
